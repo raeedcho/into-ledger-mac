@@ -418,9 +418,9 @@ func (b byVal) Swap(i int, j int) {
 
 func singleCharMode() {
 	// disable input buffering
-	exec.Command("stty", "-F", "/dev/tty", "cbreak", "min", "1").Run()
+	exec.Command("stty", "-f", "/dev/tty", "cbreak", "min", "1").Run()
 	// do not display entered characters on the screen
-	exec.Command("stty", "-F", "/dev/tty", "-echo").Run()
+	exec.Command("stty", "-f", "/dev/tty", "-echo").Run()
 }
 
 func saneMode() {
